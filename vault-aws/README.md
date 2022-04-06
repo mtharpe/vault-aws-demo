@@ -5,8 +5,18 @@ This is a scripted demo using Vault and AWS resources for demo purposes. The dem
 
 ### Requirements
 + Vault installed locally (can be container or binary, but MUST listen on 8200 and be http only)
++ AWS Account with a user called `vault_demo`
 + direnv (provides automatic setup of all environment variables)
 + Google Chrome (this was only tested on Mac, so if you are using Linux or Windows you may have to make some modifications)
 + The ability to follow the prompts, speak to the tech, and press "enter"
 
 #### How to use this
+First, I use tmux to allow multiple "virtal" tabs. This will enable me to start Vault on the first tab, and then create a new tab to work out of for the demo. The entire script is using demo magic, so I will split the screen with a terminal window and web UI for Vault so that I can then show off what the commands are doing and it makes for a better demo.
+
++ Start Vault
++ CD to the vault-aws demo area (I think that you got that by now)
++ Run `./1-vault-aws-auth-method.sh && 2-vault-aws-dynamic-secrets-demo.sh`
++ Move through the demo pressing only the `enter` or `return` key
++ Talk to each command, but dont wait too long because there are timeouts in Vault that will cause issues if you do
++ EOL
+
