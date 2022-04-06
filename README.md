@@ -1,5 +1,7 @@
 [![Build](https://github.com/mtharpe/vault-aws-demo/actions/workflows/build.yml/badge.svg)](https://github.com/mtharpe/vault-aws-demo/actions/workflows/build.yml)
 
+[![CircleCI](https://circleci.com/gh/mtharpe/vault-aws-demo/tree/main.svg?style=svg&circle-token=c7b88361b4bb96ba0dc7c82639ce1eb615bb5ad4)](https://circleci.com/gh/mtharpe/vault-aws-demo/tree/main)
+
 # Demo Magic
 
 demo-magic.sh is a handy shell script that enables you to script repeatable demos in a bash environment so you don't have to type as you present. Rather than trying to type commands when presenting you simply script them and let demo-magic.sh run them for you.
