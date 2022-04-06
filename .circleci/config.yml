@@ -3,4 +3,4 @@ orbs:
   shellcheck: circleci/shellcheck@3.1.0
 jobs:
   - shellcheck/check:
-      dir: .
+      dir: ./
