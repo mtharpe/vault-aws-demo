@@ -6,4 +6,4 @@ workflows:
     jobs:
       - shellcheck/check:
           dir: ./
-          exclude: SC2148,SC2034,SC2016,SC2059,SC2007,SC2162,SC2220,SC1091
+          exclude: SC2148,SC2034,SC2016,SC2059,SC2007,SC2162,SC2220,SC1091,SC1072,SC1073,SC1009
