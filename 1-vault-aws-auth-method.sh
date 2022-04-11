@@ -3,7 +3,12 @@
 ########################
 # include the magic
 ########################
-. ../demo-magic.sh
+. demo-magic.sh
+
+########################
+# OS detection
+########################
+UNAME=$(uname)
 
 ########################
 # Configure the options
@@ -24,10 +29,12 @@ DEMO_PROMPT="${GREEN}tharpem${WHITE}:$PWD$ "
 # text color
 # DEMO_CMD_COLOR=$BLACK
 
-# Pre-Execution Scripts
-direnv allow
-vault auth disable aws
-open -a "Google Chrome" -n --args --incognito http://localhost:8200
+if [ UNAME eq 'Darwin' ]
+then
+  open -a "Google Chrome" -n --args --incognito http://localhost:8200
+else
+  google-chrome --incognito --new-window http://localhost:8200
+fi
 
 # hide the evidence
 clear
