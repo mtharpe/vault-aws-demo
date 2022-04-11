@@ -8,7 +8,7 @@
 ########################
 # OS detection
 ########################
-UNAME=$(uname)
+OSNAME=$(uname)
 
 ########################
 # Configure the options
@@ -29,7 +29,7 @@ DEMO_PROMPT="${GREEN}tharpem${WHITE}:$PWD$ "
 # text color
 # DEMO_CMD_COLOR=$BLACK
 
-if [ UNAME eq 'Darwin' ]
+if [ OSNAME eq 'Darwin' ]
 then
   open -a "Google Chrome" -n --args --incognito http://localhost:8200
 else
