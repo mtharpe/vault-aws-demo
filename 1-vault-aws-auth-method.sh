@@ -33,7 +33,7 @@ if [ OSNAME eq 'Darwin' ]
 then
   open -a "Google Chrome" -n --args --incognito http://localhost:8200
 else
-  google-chrome --incognito --new-window http://localhost:8200
+  google-chrome --disable-gpu --disable-software-rasterizer --incognito --new-window http://localhost:8200
 fi
 
 # hide the evidence
