@@ -6,6 +6,7 @@
 This is a scripted demo using Vault and AWS resources for demo purposes. The demo will show using Vault with AWS auth method and secrets engine, and will require no typing as the script does it all for you provided you read and applu the requirements section of this document.
 
 ### Requirements
++ Ensure you have `pv` installed on your machine before starting the demo!
 + Vault installed locally (can be container or binary, but MUST listen on 8200 and be http only)
 + AWS Account with a user called `vault_demo`
 + direnv (provides automatic setup of all environment variables)
