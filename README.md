@@ -1,7 +1,5 @@
 [![CircleCI](https://circleci.com/gh/mtharpe/vault-aws-demo/tree/main.svg?style=svg)](https://circleci.com/gh/mtharpe/vault-aws-demo/tree/main)
 
-[![Build](https://github.com/mtharpe/vault-aws-demo/actions/workflows/build.yml/badge.svg)](https://github.com/mtharpe/vault-aws-demo/actions/workflows/build.yml)
-
 # AWS + Vault Demo Script
 
 ## Description
