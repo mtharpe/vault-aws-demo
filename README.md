@@ -16,7 +16,13 @@ This is a scripted demo using Vault and AWS resources for demo purposes. The dem
 #### How to use this
 First, I use tmux to allow multiple "virtal" tabs. This will enable me to start Vault on the first tab, and then create a new tab to work out of for the demo. The entire script is using demo magic, so I will split the screen with a terminal window and web UI for Vault so that I can then show off what the commands are doing and it makes for a better demo.
 
-+ Make sure that your .envrc file is sources prior to the demo so that you have the proper exports in place
++ Make sure that your .envrc file is sources prior to the demo so that you have the proper exports in place. Require exports:
+  + VAULT_ADDR
+  + VAULT_ROOT_TOKEN
+  + AWS_ACCOUNT_ID
+  + AWS_ACCESS_KEY_ID
+  + AWS_SECRET_ACCESS_KEY
+
 + Ensure you have the aws-cli configured
 + Start Vault (via container or local binary)
 + Run `./1-vault-aws-auth-method.sh && 2-vault-aws-dynamic-secrets-demo.sh`
