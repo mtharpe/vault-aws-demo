@@ -24,12 +24,12 @@ TYPE_SPEED=20
 #
 # see http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html for escape sequences
 #
-DEMO_PROMPT="${GREEN}tharpem${WHITE}:$PWD$ "
+DEMO_PROMPT="${GREEN}vault-admin${WHITE}:$PWD$ "
 
 # text color
 # DEMO_CMD_COLOR=$BLACK
 
-if [ OSNAME eq 'Darwin' ]
+if [ "$OSNAME" == "Darwin" ]
 then
   open -a "Google Chrome" -n --args --incognito http://localhost:8200
 else
@@ -40,11 +40,12 @@ fi
 clear
 
 # Start vault demo
+pe "vault login $VAULT_ROOT_TOKEN"
 pe "vault auth list"
 pei ""
 pe "vault auth enable aws"
 pei ""
-pe "vault write auth/aws/config/client access_key=\$AWS_ACCESS_KEY secret_key=\$AWS_SECRET_KEY"
+pe "vault write auth/aws/config/client access_key=\$AWS_ACCESS_KEY_ID secret_key=\$AWS_SECRET_ACCESS_KEY"
 pei ""
 pe "vault write auth/aws/role/my-role-iam auth_type=iam bound_iam_principal_arn=arn:aws:iam::$AWS_ACCOUNT_ID:* policies=default token_ttl=30m token_max_ttl=40m"
 pei ""
@@ -84,7 +85,7 @@ pe "rm ~/.vault-token"
 pei ""
 pe "vault auth list"
 pei ""
-pe "vault login token=password"
+pe "vault login token=$VAULT_ROOT_TOKEN"
 pei ""
 pe "vault auth list"
 pei ""
@@ -94,5 +95,5 @@ pe "vault kv delete secret/demo"
 pei ""
 pe "vault auth disable aws"
 pei ""
-rm leases.txt
+rm -f leases.txt
 clear

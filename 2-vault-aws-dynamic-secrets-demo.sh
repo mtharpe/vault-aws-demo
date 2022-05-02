@@ -19,7 +19,7 @@ TYPE_SPEED=20
 #
 # see http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html for escape sequences
 #
-DEMO_PROMPT="${GREEN}tharpem${WHITE}:$PWD$ "
+DEMO_PROMPT="${GREEN}vault-admin${WHITE}:$PWD$ "
 
 # text color
 # DEMO_CMD_COLOR=$BLACK
@@ -34,7 +34,7 @@ pe "vault secrets enable aws"
 pei ""
 pe "vault write aws/config/lease lease=30m lease_max=30m"
 pei ""
-pe "vault write aws/config/root access_key=\$AWS_ACCESS_KEY secret_key=\$AWS_SECRET_KEY region=us-east-1"
+pe "vault write aws/config/root access_key=\$AWS_ACCESS_KEY_ID secret_key=\$AWS_SECRET_ACCESS_KEY region=us-east-1"
 pe ""
 pei "vault write aws/roles/my-role credential_type=iam_user policy_document=-<<EOF
 {
@@ -75,5 +75,6 @@ pe "vault lease revoke aws/creds/my-role/$(tail -1 leases.txt)"
 pei ""
 pe "vault secrets disable aws"
 pe ""
+pe "aws iam list-users"
 rm leases.txt
 clear
